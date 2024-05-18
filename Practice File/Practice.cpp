@@ -152,29 +152,32 @@ int main()
 
         Example - 03:
         {
-            int a[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    }, b[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    }, s[3][3], i, j, n;
+            int
+            a[3][3] = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            },
+            b[3][3] = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            },
+            s[3][3], i, j, n;
 
-    cin >> n;
+            cin >> n;
 
-    for(i = 0; i < n; i++)
-    {
-        for(j = 0; j < n; j++)
-        {
-            s[i][j] = a[i][j] + b[i][j];
-            cout << s[i][j] << " ";
-        }
-        cout << endl;
-    }
+            for(i = 0; i < n; i++)
+            {
+                for(j = 0; j < n; j++)
+                {
+                    s[i][j] = a[i][j] + b[i][j];
+                    cout << s[i][j] << " ";
+                }
+                cout << endl;
+            }
 
-    cout << "Complexity is O(n^2)";
+            cout << "Complexity is O(n^2)";
         }
 
 
