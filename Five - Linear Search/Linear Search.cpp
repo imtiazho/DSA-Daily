@@ -35,7 +35,11 @@ int main()
         cout << "Element's index is " << result;
     }
 
-
+    /*
+        Note: We always count Time complexity in worst case
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     getch();
     return 0;
 }
