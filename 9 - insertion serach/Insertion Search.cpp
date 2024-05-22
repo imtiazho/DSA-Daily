@@ -20,7 +20,6 @@ void insertionSearch(int Arr[], int n)
     }
 }
 
-
 int main()
 {
     int arr[] = {12, 11, 13, 5, 6};
