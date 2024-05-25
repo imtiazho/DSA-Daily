@@ -2,6 +2,21 @@
 
 using namespace std;
 
+int linearSearch(int Arr[], int lengthOfArray, int target)
+{
+    int i;
+    for(i = 0; i < lengthOfArray; i++)
+    {
+        if(Arr[i] == target)
+        {
+            return Arr[i];
+        }
+    }
+
+    i = -1;
+    return i;
+}
+
 int main()
 {
     /*
@@ -180,8 +195,27 @@ int main()
             cout << "Complexity is O(n^2)";
         }
 
+    */
+
+    /*
+        // Class - 5(Linear Search): Linear search is a simple search algorithm
+        that iterates through a list of items one by one, checking each element
+        against the target value. It's like looking for a specific book in a bookshelf
+        by checking each book from left to right until you find the one you're
+        looking for.
 
     */
+
+    int Arr[] = {1, 2, 3, 4, 5};
+    int sizeOfArray = sizeof(Arr) / sizeof(Arr[0]);
+    int target = 5;
+    int result = linearSearch(Arr, sizeOfArray, target);
+    if(result != -1)
+    {
+        cout << "Targeted number is found!";
+    }else{
+        cout << "Targeted number is not found!";
+    }
 
     return 0;
 }
