@@ -2,34 +2,30 @@
 
 using namespace std;
 
-void selectionSort(int Arr[], int lengthOfArray)
+void bubbleSort(int Arr[], int lengthOfArray)
 {
-    for(int i = 0; i < lengthOfArray - 1; i++)
+    int i ,j , temp;
+    for(i = 0; i < lengthOfArray; i++)
     {
-        int index_min = i;
-        for(int j = i + 1; j < lengthOfArray; j++)
+        for(j = 0; j < lengthOfArray - i - 1; j++)
         {
-            if(Arr[j] < Arr[index_min])
+            if(Arr[j] > Arr[j + 1])
             {
-                index_min = j;
+                temp = Arr[j];
+                Arr[j] = Arr[j + 1];
+                Arr[j + 1] = temp;
             }
-        }
-
-        if(index_min != i)
-        {
-            int temp = Arr[i];
-            Arr[i] = Arr[index_min];
-            Arr[index_min] = temp;
         }
     }
 }
+
 
 int main()
 {
     int arr[] = {8, 7, 6, 5, 4, 6, 2, 4, 6};
     int sizeOfArray = sizeof(arr) / sizeof(arr[0]);
     int target = 91;
-    selectionSort(arr, sizeOfArray);
+    bubbleSort(arr, sizeOfArray);
 
     for(int i = 0; i < sizeOfArray; i++)
     {
