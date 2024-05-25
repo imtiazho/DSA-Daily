@@ -2,45 +2,40 @@
 
 using namespace std;
 
-bool binarySearch(int Arr[], int sizeOfArray, int target)
+void selectionSort(int Arr[], int lengthOfArray)
 {
-    int low = 0;
-    int high = sizeOfArray - 1;
-
-    while(low <= high)
+    for(int i = 0; i < lengthOfArray - 1; i++)
     {
-        int mid = low + (high - low) / 2;
+        int index_min = i;
+        for(int j = i + 1; j < lengthOfArray; j++)
+        {
+            if(Arr[j] < Arr[index_min])
+            {
+                index_min = j;
+            }
+        }
 
-        if(Arr[mid] == target)
+        if(index_min != i)
         {
-            return true;
-        }
-        else if(target > mid)
-        {
-            low = mid + 1;
-        }
-        else{
-            // target < mid : Condition
-            high = mid - 1;
+            int temp = Arr[i];
+            Arr[i] = Arr[index_min];
+            Arr[index_min] = temp;
         }
     }
-
-    return false;
 }
 
 int main()
 {
-    int arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91}; // Must be sorted
+    int arr[] = {8, 7, 6, 5, 4, 6, 2, 4, 6};
     int sizeOfArray = sizeof(arr) / sizeof(arr[0]);
     int target = 91;
+    selectionSort(arr, sizeOfArray);
 
-
-    if(binarySearch(arr, sizeOfArray, target))
+    for(int i = 0; i < sizeOfArray; i++)
     {
-        cout << "Targeted value is found!";
+        cout << arr[i] << " ";
     }
-    else{
-        cout << "Targeted value is not found!";
-    }
+
+
     return 0;
 }
